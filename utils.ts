@@ -4,7 +4,7 @@ export class Utils {
     static readonly DEFAULT_WORDS_PER_PAGE = 185;
     static readonly SCROLL_Y_LIMIT = 5;
     static readonly IMAGE_THRESHOLD = 15;
-    static readonly BLOCKED_URIS =  ["google", "chatgpt", "yahoo", "outlook", "youtube"];
+    static readonly BLOCKED_URIS =  ["google", "chatgpt", "yahoo", "outlook", "youtube", "github", "bitbucket"];
     static readonly NOTIFICATION_THRESHOLD_READ_TIME = 10;
     static readonly NOTIFICATION_TITLE =  "Take a Break!";
     static readonly NOTIFICATION_REDIRECT_URL = 'https://www.example.com';
