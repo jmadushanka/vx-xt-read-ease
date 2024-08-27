@@ -42,7 +42,15 @@ chrome.webRequest.onCompleted.addListener(
 
 async function sendMessageToActiveTab(message) {
   const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
-  await chrome.tabs.sendMessage(tab.id, message).catch(err => {
+  await chrome.tabs.sendMessage(tab.id, message).then(success => {
+    chrome.webNavigation.onCompleted.addListener((details) => {
+      //console.log("Navigation completed:", details);
+    });
+    
+    chrome.webNavigation.onBeforeNavigate.addListener((details) => {
+      //console.log("Navigation started:", details);
+    });
+  }).catch(err => {
     //console.log("error in sending message", err);
   })
 }
@@ -56,7 +64,7 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
       readTime = result.readTime || 0;
 
       if (readTime > Utils.NOTIFICATION_THRESHOLD_READ_TIME) {
-        chrome.alarms.clearAll(() => {
+        chrome.alarms.clear("triggerNotification", () => {
           chrome.alarms.create("triggerNotification", { delayInMinutes: readTime });
         });
       }
