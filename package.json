@@ -2,7 +2,7 @@
   "name": "Read Ease",
   "displayName": "Read Ease",
   "version": "1.0.0",
-  "description": "Read Ease offers cusdfdfdfdftomizable tools to optimize online reading, declutter pages, and tailor updates to your preferences and speed.",
+  "description": "Read Ease offers customizable tools to optimize online reading, declutter pages, and tailor updates to your preferences and speed.",
   "author": "Read Ease <read.right.eu@gmail.com>",
   "scripts": {
     "dev": "plasmo dev",
