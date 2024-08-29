@@ -73,7 +73,6 @@ const IndexPopup = () => {
 
   const toggleBlocking = () => {
     setIsBlocking(!isBlocking);
-    //return 1;
     if (isBlocking) {
       // Remove blocking rules
       chrome.declarativeNetRequest.updateDynamicRules({
