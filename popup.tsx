@@ -41,6 +41,8 @@ const IndexPopup = () => {
   const saveSettings = () => {
     chrome.storage.sync.set({ wordsPerPage }, () => {
     });
+
+    window.close();
   };
 
   const saveAndReload = () => {
@@ -53,6 +55,8 @@ const IndexPopup = () => {
         chrome.tabs.reload(currentTab.id);
       }
     });
+
+    window.close();
   };
 
   // Handle radio button change
@@ -62,6 +66,8 @@ const IndexPopup = () => {
 
     // Save the selected value in Chrome storage
     chrome.storage.sync.set({ notificationMode: value });
+
+    window.close();
   };
 
 
